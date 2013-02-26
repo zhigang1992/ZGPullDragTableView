@@ -1,7 +1,7 @@
 ZGPullDragTableView
 ===================
 
-Awesome TableView Category for Drag and Pull.
+Awesome TableView Category for Drag and Pull, light weigh yet powerful customization.
 
 ![img](https://raw.github.com/zhigang1992/ZGPullDragTableView/master/ScreenShots/Screen%20Shot%202013-02-26%20at%203.23.23%20PM.png)
 ![img](https://raw.github.com/zhigang1992/ZGPullDragTableView/master/ScreenShots/Screen%20Shot%202013-02-26%20at%203.23.44%20PM.png)
@@ -29,6 +29,20 @@ and also two more `Delegate`:
 
 all of its delegate method are optional.
 
+```
+@protocol ZGDragViewDelegate <NSObject>
+@optional
+- (void)dragView:(UIView *)dragView Show:(CGFloat )showPixels ofTotal:(CGFloat )totalPixels;
+- (void)dragView:(UIView *)dragView hangForCompletionBlock:(void (^)())completed;
+@end
+
+@protocol ZGPullViewDelegate <NSObject>
+@optional
+- (void)pullView:(UIView *)pullView Show:(CGFloat )shownPixels ofTotal:(CGFloat )totalPixels;
+- (void)pullView:(UIView *)pullView hangForCompletionBlock:(void (^)())completed;
+@end
+```
+
 [![ScreenShot](https://raw.github.com/zhigang1992/ZGPullDragTableView/master/ScreenShots/Screen%20Shot%202013-02-26%20at%203.30.47%20PM.png)](http://youtu.be/1LU7k563Cmo)
 
 
@@ -37,7 +51,7 @@ all of its delegate method are optional.
 
 ####Contact:
   * [@F_ZG](http://twitter.com/F_ZG)
-  * [zhigang1992@gmail.com]
+  * zhigang1992@gmail.com
 
 
 ####Licsen-MIT
