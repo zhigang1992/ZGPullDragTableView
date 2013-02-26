@@ -38,11 +38,12 @@ all of its delegate method are optional.
                    DESC
   s.homepage     = "https://github.com/zhigang1992/ZGPullDragTableView"
 
-  s.license      = 'MIT'
+  s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.author       = { "Kyle Fang" => "zhigang1992@gmail.com" }
   s.source       = { :git => "https://github.com/zhigang1992/ZGPullDragTableView.git", :tag => "0.0.1" }
   s.platform     = :ios, '5.0'
   s.source_files = 'Classes', 'ZGPullDragTableViewClass/**/*.{h,m}'
 
   s.public_header_files = 'ZGPullDragTableViewClass/**/*.h'
+  s.requires_arc = true
 end
