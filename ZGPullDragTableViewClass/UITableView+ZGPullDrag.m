@@ -160,7 +160,11 @@ static char UITableViewZGDragView;
     if (visiblePixels>self.dragView.frame.size.height && !self.isDragging) {
         [UIView animateWithDuration:0.1
                          animations:^{
-                             self.contentInset = UIEdgeInsetsMake(0, 0, self.dragView.frame.size.height, 0);
+                             if (self.dragView.frame.origin.y == self.frame.size.height) {
+                                 self.contentInset = UIEdgeInsetsMake(0, 0, self.dragView.frame.size.height + self.frame.size.height - self.contentSize.height, 0);
+                             } else {
+                                 self.contentInset = UIEdgeInsetsMake(0, 0, self.dragView.frame.size.height, 0);
+                             }
                          } completion:^(BOOL finished) {
                              if ([self.ZGDragViewDelegate respondsToSelector:@selector(dragView:hangForCompletionBlock:)]) {
                                  [self.ZGDragViewDelegate dragView:self.dragView hangForCompletionBlock:^{
