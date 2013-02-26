@@ -175,6 +175,10 @@ static char UITableViewZGDragView;
     }
 }
 
-
+- (void)dealloc{
+    if (self.isObserving) {
+        self.isObserving = NO;
+    }
+}
 
 @end
