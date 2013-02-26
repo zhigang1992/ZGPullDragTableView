@@ -33,3 +33,9 @@ all of its delegate method are optional.
 
 
 [ZGPullDragTableView]: https://github.com/zhigang1992/ZGPullDragTableView
+
+
+####Licsen-MIT
+####Contact:
+  * [@F_ZG](http://twitter.com/F_ZG)
+  * [zhigang1992@gmail.com]
