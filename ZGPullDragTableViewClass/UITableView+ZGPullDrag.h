@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  UITableView+ZGPullDrag.h
 //  ZGPullDragTableView
 //
 //  Created by Kyle Fang on 2/26/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface UITableView (ZGPullDrag)
 
 @end

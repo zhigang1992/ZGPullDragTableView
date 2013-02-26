@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0487E66316DC5D5300D3A6C9 /* UITableView+ZGPullDrag.m in Sources */ = {isa = PBXBuildFile; fileRef = 0487E66216DC5D5300D3A6C9 /* UITableView+ZGPullDrag.m */; };
+		0487E66616DC5D8700D3A6C9 /* DemoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0487E66516DC5D8700D3A6C9 /* DemoTableViewController.m */; };
 		048C210616DC5C99007AC6FB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048C210516DC5C99007AC6FB /* UIKit.framework */; };
 		048C210816DC5C99007AC6FB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048C210716DC5C99007AC6FB /* Foundation.framework */; };
 		048C210A16DC5C99007AC6FB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048C210916DC5C99007AC6FB /* CoreGraphics.framework */; };
@@ -17,7 +19,6 @@
 		048C211A16DC5C99007AC6FB /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 048C211916DC5C99007AC6FB /* Default@2x.png */; };
 		048C211C16DC5C99007AC6FB /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 048C211B16DC5C99007AC6FB /* Default-568h@2x.png */; };
 		048C211F16DC5C99007AC6FB /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 048C211D16DC5C99007AC6FB /* MainStoryboard.storyboard */; };
-		048C212216DC5C99007AC6FB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 048C212116DC5C99007AC6FB /* ViewController.m */; };
 		048C212A16DC5C99007AC6FB /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048C212916DC5C99007AC6FB /* SenTestingKit.framework */; };
 		048C212B16DC5C99007AC6FB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048C210516DC5C99007AC6FB /* UIKit.framework */; };
 		048C212C16DC5C99007AC6FB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048C210716DC5C99007AC6FB /* Foundation.framework */; };
@@ -36,6 +37,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0487E66116DC5D5300D3A6C9 /* UITableView+ZGPullDrag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UITableView+ZGPullDrag.h"; path = "ZGPullDragTableViewClass/UITableView+ZGPullDrag.h"; sourceTree = SOURCE_ROOT; };
+		0487E66216DC5D5300D3A6C9 /* UITableView+ZGPullDrag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITableView+ZGPullDrag.m"; path = "ZGPullDragTableViewClass/UITableView+ZGPullDrag.m"; sourceTree = SOURCE_ROOT; };
+		0487E66416DC5D8700D3A6C9 /* DemoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoTableViewController.h; sourceTree = "<group>"; };
+		0487E66516DC5D8700D3A6C9 /* DemoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoTableViewController.m; sourceTree = "<group>"; };
 		048C210216DC5C99007AC6FB /* ZGPullDragTableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZGPullDragTableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		048C210516DC5C99007AC6FB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		048C210716DC5C99007AC6FB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -50,8 +55,6 @@
 		048C211916DC5C99007AC6FB /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		048C211B16DC5C99007AC6FB /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		048C211E16DC5C99007AC6FB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		048C212016DC5C99007AC6FB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		048C212116DC5C99007AC6FB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		048C212816DC5C99007AC6FB /* ZGPullDragTableViewTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZGPullDragTableViewTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		048C212916DC5C99007AC6FB /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		048C213116DC5C99007AC6FB /* ZGPullDragTableViewTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ZGPullDragTableViewTests-Info.plist"; sourceTree = "<group>"; };
@@ -87,6 +90,8 @@
 		048C20F916DC5C99007AC6FB = {
 			isa = PBXGroup;
 			children = (
+				0487E66116DC5D5300D3A6C9 /* UITableView+ZGPullDrag.h */,
+				0487E66216DC5D5300D3A6C9 /* UITableView+ZGPullDrag.m */,
 				048C210B16DC5C99007AC6FB /* ZGPullDragTableView */,
 				048C212F16DC5C99007AC6FB /* ZGPullDragTableViewTests */,
 				048C210416DC5C99007AC6FB /* Frameworks */,
@@ -117,11 +122,11 @@
 		048C210B16DC5C99007AC6FB /* ZGPullDragTableView */ = {
 			isa = PBXGroup;
 			children = (
+				0487E66416DC5D8700D3A6C9 /* DemoTableViewController.h */,
+				0487E66516DC5D8700D3A6C9 /* DemoTableViewController.m */,
 				048C211416DC5C99007AC6FB /* AppDelegate.h */,
 				048C211516DC5C99007AC6FB /* AppDelegate.m */,
 				048C211D16DC5C99007AC6FB /* MainStoryboard.storyboard */,
-				048C212016DC5C99007AC6FB /* ViewController.h */,
-				048C212116DC5C99007AC6FB /* ViewController.m */,
 				048C210C16DC5C99007AC6FB /* Supporting Files */,
 			);
 			path = ZGPullDragTableView;
@@ -272,7 +277,8 @@
 			files = (
 				048C211216DC5C99007AC6FB /* main.m in Sources */,
 				048C211616DC5C99007AC6FB /* AppDelegate.m in Sources */,
-				048C212216DC5C99007AC6FB /* ViewController.m in Sources */,
+				0487E66316DC5D5300D3A6C9 /* UITableView+ZGPullDrag.m in Sources */,
+				0487E66616DC5D8700D3A6C9 /* DemoTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,6 +459,7 @@
 				048C213C16DC5C99007AC6FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		048C213D16DC5C99007AC6FB /* Build configuration list for PBXNativeTarget "ZGPullDragTableViewTests" */ = {
 			isa = XCConfigurationList;
@@ -461,6 +468,7 @@
 				048C213F16DC5C99007AC6FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
