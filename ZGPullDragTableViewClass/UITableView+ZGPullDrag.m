@@ -98,6 +98,9 @@ static char UITableViewZGDragView;
 }
 
 - (void)addZGPullView:(UIView *)pullView{
+    if (self.pullView) {
+        [self.pullView removeFromSuperview];
+    }
     pullView.frame = CGRectOffset(pullView.frame, -pullView.frame.origin.x, -pullView.frame.origin.y-pullView.frame.size.height);
     [self addSubview:pullView];
     self.pullView = pullView;
@@ -105,6 +108,9 @@ static char UITableViewZGDragView;
 }
 
 - (void)addZGDragView:(UIView *)dragView{
+    if (self.dragView) {
+        [self.dragView removeFromSuperview];
+    }
     [self layoutIfNeeded];
     CGFloat originY = MAX(self.frame.size.height, self.contentSize.height);
     dragView.frame = CGRectOffset(dragView.frame, -dragView.frame.origin.x, -dragView.frame.origin.y+originY);

@@ -16,26 +16,13 @@
 
 @implementation DemoTableViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+#pragma mark - 
+#pragma mark - init Pull and Drag View
 
-- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
-    return [[UIView alloc] init];
-}
-
-- (CGFloat )tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    return 1;
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
+- (void)configPullDragView{
+    
+    //Any View would do.
+    
     UIView *pullView = [[UIView alloc] initWithFrame:CGRectMake(-320, 0, 320, 80)];
     pullView.backgroundColor = [UIColor greenColor];
     pullView.alpha = 0;
@@ -49,7 +36,12 @@
     self.tableView.ZGDragViewDelegate = self;
 }
 
+#pragma mark - PullView Delegate
+
 - (void)pullView:(UIView *)pullView Show:(CGFloat)shownPixels ofTotal:(CGFloat)totalPixels{
+    
+    //Do what ever you like with the pullView.
+    //It updates with scrollViewDidScroll
     CGFloat progress = MIN(shownPixels / totalPixels, 1.f);
     pullView.alpha = progress;
     CGRect frame = pullView.frame;
@@ -58,6 +50,8 @@
 }
 
 - (void)pullView:(UIView *)pullView hangForCompletionBlock:(void (^)())completed{
+    
+    //Run completed() in 2 seconds
     int64_t delayInSeconds = 2.0;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
@@ -65,7 +59,12 @@
     });
 }
 
+#pragma mark - DragView Delegate
+
 - (void)dragView:(UIView *)dragView Show:(CGFloat)showPixels ofTotal:(CGFloat)totalPixels{
+    
+    //Do what ever you like with the dragView
+    //It updates with scrollViewDidScroll
     CGFloat progress = MIN(showPixels/totalPixels, 1.f);
     dragView.alpha = progress;
     CGRect frame = dragView.frame;
@@ -74,11 +73,53 @@
 }
 
 - (void)dragView:(UIView *)dragView hangForCompletionBlock:(void (^)())completed{
+    
+    //Run completed() in 2 seconds
     int64_t delayInSeconds = 2.0;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         completed();
     });
+}
+
+
+
+//=========================================================
+//
+//              Rest of Code is for demo purpose!
+//
+//=========================================================
+
+
+
+//Make the button seperate invisible
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+    return [[UIView alloc] init];
+}
+
+- (CGFloat )tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 1;
+}
+
+
+//taggle between long and short list
+- (NSInteger )numberOfSectionsInTableView:(UITableView *)tableView{
+    if (tableView.numberOfSections == 1) {
+        return 3;
+    } else {
+        return 1;
+    }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView reloadData];
+    [self configPullDragView];
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    [self configPullDragView];
 }
 
 @end
