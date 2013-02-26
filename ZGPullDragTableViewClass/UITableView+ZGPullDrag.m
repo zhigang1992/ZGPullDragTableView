@@ -131,38 +131,46 @@ static char UITableViewZGDragView;
 }
 
 - (void)pullViewHandler:(CGFloat )visiblePixels{
-    [self.ZGPullViewDelegate pullView:self.pullView Show:visiblePixels ofTotal:self.pullView.frame.size.height];
+    if ([self.ZGPullViewDelegate respondsToSelector:@selector(pullView:Show:ofTotal:)]) {
+        [self.ZGPullViewDelegate pullView:self.pullView Show:visiblePixels ofTotal:self.pullView.frame.size.height];
+    }
     if (visiblePixels>self.pullView.frame.size.height && !self.isDragging) {
         [UIView animateWithDuration:0.1
                          animations:^{
                              self.contentInset = UIEdgeInsetsMake(self.pullView.frame.size.height, 0, 0, 0);
                          } completion:^(BOOL finished) {
-                             [self.ZGPullViewDelegate pullView:self.pullView hangForCompletionBlock:^{
-                                 [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                                     [UIView animateWithDuration:0.2 animations:^{
-                                         self.contentInset = UIEdgeInsetsZero;
+                             if ([self.ZGPullViewDelegate respondsToSelector:@selector(pullView:hangForCompletionBlock:)]) {
+                                 [self.ZGPullViewDelegate pullView:self.pullView hangForCompletionBlock:^{
+                                     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                                         [UIView animateWithDuration:0.2 animations:^{
+                                             self.contentInset = UIEdgeInsetsZero;
+                                         }];
                                      }];
                                  }];
-                             }];
+                             }
                          }];
     }
 }
 
 
 - (void)dragViewHandler:(CGFloat )visiblePixels{
-    [self.ZGDragViewDelegate dragView:self.dragView Show:visiblePixels ofTotal:self.dragView.frame.size.height];
+    if ([self.ZGDragViewDelegate respondsToSelector:@selector(dragView:Show:ofTotal:)]) {
+        [self.ZGDragViewDelegate dragView:self.dragView Show:visiblePixels ofTotal:self.dragView.frame.size.height];
+    }
     if (visiblePixels>self.dragView.frame.size.height && !self.isDragging) {
         [UIView animateWithDuration:0.1
                          animations:^{
                              self.contentInset = UIEdgeInsetsMake(0, 0, self.dragView.frame.size.height, 0);
                          } completion:^(BOOL finished) {
-                             [self.ZGDragViewDelegate dragView:self.dragView hangForCompletionBlock:^{
-                                 [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                                     [UIView animateWithDuration:0.2 animations:^{
-                                         self.contentInset = UIEdgeInsetsZero;
+                             if ([self.ZGDragViewDelegate respondsToSelector:@selector(dragView:hangForCompletionBlock:)]) {
+                                 [self.ZGDragViewDelegate dragView:self.dragView hangForCompletionBlock:^{
+                                     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                                         [UIView animateWithDuration:0.2 animations:^{
+                                             self.contentInset = UIEdgeInsetsZero;
+                                         }];
                                      }];
                                  }];
-                             }];
+                             }
                          }];
     }
 }
