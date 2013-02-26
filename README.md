@@ -1,6 +1,18 @@
 ZGPullDragTableView
 ===================
 
+
+##Important
+
+**It repo is only here for reference purpose**
+**Please use [ZGPullDragScrollView](https://github.com/zhigang1992/ZGPullDragScrollView) instead**
+**Since `UITableView` subclass `UIScrollView`, all the API works perfectly in `UITableView`**
+**[ReadMore](https://github.com/zhigang1992/ZGPullDragTableView/issues/1)**
+
+--------------------
+
+
+--------------------
 Awesome TableView Category for Drag and Pull, light weigh yet powerful customization.
 
 ![img](https://raw.github.com/zhigang1992/ZGPullDragTableView/master/ScreenShots/Screen%20Shot%202013-02-26%20at%203.23.23%20PM.png)
