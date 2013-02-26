@@ -103,9 +103,9 @@
 
 
 //taggle between long and short list
-- (NSInteger )numberOfSectionsInTableView:(UITableView *)tableView{
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     if (tableView.numberOfSections == 1) {
-        return 3;
+        return 2;
     } else {
         return 1;
     }
